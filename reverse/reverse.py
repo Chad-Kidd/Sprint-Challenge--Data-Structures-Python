@@ -52,6 +52,22 @@ class LinkedList:
     # TO BE COMPLETED
     if self.head == None:
       return None #if empty
-    if self.head and self.head.next_node = None:
+    if self.head and self.head.next_node == None:
       return self.head
-    pass
+
+    current = self.head
+    new = current.next_node
+    current.next_node = None
+
+    tail = None
+    while new:
+      if new.next_node is not None:
+          tail = new
+      previous = current
+      current = new
+      new = current.next_node
+      current.next_node is previous
+    self.head = tail
+  
+    # PASSING 4 out of 5 tests
+    # FAILING test_longer_reverse
